@@ -18,6 +18,7 @@
     color: #f4f4f4; margin: 0 1rem; text-decoration: none; font-weight: bold;
   }
   nav a:hover { color: #aa7b39; }
+
   .hero {
     background: url('images/ahjo.jpg') center/cover no-repeat;
     height: 50vh;
@@ -26,11 +27,6 @@
     align-items: flex-start;
     padding-top: 300px; 
     padding-right: 50px;
-    text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
   }
   .hero h2 { 
     font-size: 2rem; 
@@ -42,8 +38,30 @@
       1px 1px 0 #aa7b39;
     margin: 0;
   }
+
   footer {
     background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
+  }
+
+  /* --- Mobiilityylit --- */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5rem;
+    }
+    nav a {
+      display: block;
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .hero {
+      padding-top: 150px;   /* pienempi ylätila */
+      padding-right: 0;     /* ei työnnetä sivuun */
+      align-items: center;  /* keskitetään sisältö pystysuunnassa */
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 1.6rem;    /* vähän pienempi otsikko */
+    }
   }
 </style>
 </head>
@@ -67,17 +85,3 @@
 </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
