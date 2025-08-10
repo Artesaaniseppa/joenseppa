@@ -31,6 +31,7 @@
     margin: 0 1rem; 
     text-decoration: none; 
     font-weight: bold;
+    display: inline-block;
   }
   nav a:hover { 
     color: #aa7b39; 
@@ -49,32 +50,17 @@
     width: 100%;
     height: auto;
     border: 2px solid #aa7b39;
-    border-radius: 4px;
     display: block;
   }
-  /* Viides kuva desktopilla */
-  @media (min-width: 701px) {
-    .gallery img.wide-image {
-      width: 632px;
-      height: auto;
-      grid-column: span 2;
-      justify-self: center;
-    }
+  .gallery img.short-image {
+    width: 306px;
+    height: 267px;
   }
-  /* Mobiili */
-  @media (max-width: 700px) {
-    nav a {
-      display: block;
-      margin: 0.5rem 0;
-    }
-    .gallery {
-      grid-template-columns: 1fr;
-    }
-    .gallery img.wide-image {
-      grid-column: span 1;
-      width: 100%;
-      height: auto;
-    }
+  .gallery img.wide-image {
+    width: 632px;
+    height: auto;
+    grid-column: span 2;
+    justify-self: start; /* TÄRKEÄ: pitää kuvan vasemmalla pöytäkoneella */
   }
   footer {
     background: #111; 
@@ -84,6 +70,23 @@
     color: #aaa; 
     border-top: 2px solid #aa7b39; 
     margin-top: 2rem;
+  }
+
+  /* Mobiilissa kuvat koko leveydelle ja keskitetty nav */
+  @media (max-width: 768px) {
+    nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
+    .gallery img.wide-image {
+      width: 100%;
+      grid-column: span 1;
+      justify-self: center;
+    }
+    .gallery img.short-image {
+      width: 100%;
+      height: auto;
+    }
   }
 </style>
 </head>
@@ -111,7 +114,7 @@
       <img src="images/Koukkuja.jpg" alt="Koukkuja" />
     </a>
     <a href="images/Sydämmiä2.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="images/Sydämmiä2.jpg" alt="Sydämiä" />
+      <img src="images/Sydämmiä2.jpg" alt="Sydämiä" class="short-image" />
     </a>
     <a href="images/Oravansurma2.jpg" target="_blank" rel="noopener noreferrer">
       <img src="images/Oravansurma2.jpg" alt="Puukko" class="wide-image" />
@@ -124,3 +127,4 @@
 </footer>
 </body>
 </html>
+
