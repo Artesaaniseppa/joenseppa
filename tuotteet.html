@@ -30,16 +30,23 @@
     width: 100%;
     height: auto;
     border: 2px solid #aa7b39;
+    display: block;
   }
+  /* Poistetaan kiinteät pikselimitat */
   .gallery img.short-image {
-    width: 306px;
-    height: 267px;
-    border: 2px solid #aa7b39;
+    max-width: 100%;
+    height: auto;
   }
   .gallery img.wide-image {
-    width: 632px;
+    max-width: 100%;
     height: auto;
     grid-column: span 2;
+  }
+  /* Mobiilissa wide-image vie vain yhden sarakkeen */
+  @media (max-width: 600px) {
+    .gallery img.wide-image {
+      grid-column: span 1;
+    }
   }
   footer {
     background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
@@ -83,14 +90,4 @@
 </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
