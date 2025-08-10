@@ -19,31 +19,33 @@
   }
   nav a:hover { color: #aa7b39; }
   section {
-    padding: 2rem; max-width: 1000px; margin: auto;
+    padding: 2rem; max-width: 960px; margin: auto;
   }
- .gallery {
+  .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    max-width: 960px;  
-    margin: auto;
   }
-
+  .gallery a {
+    display: block; /* jotta koko linkki on klikattava */
+  }
   .gallery img {
     width: 100%;
     height: 200px;         
     object-fit: cover;     
     border: 2px solid #aa7b39;
     display: block;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
   }
-
+  .gallery img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
   .gallery img.wide-image {
     grid-column: span 2;
     height: 300px; 
-    
   }
-
-
   footer {
     background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
   }
@@ -64,19 +66,19 @@
   <h2>Tuotteet</h2>
   <div class="gallery">
     <a href="images/Takkavalinesarja.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="images/Takkavalinesarja.jpg" alt="Takkavalinesarja." style="max-width: 300px; height: auto;" />
+      <img src="images/Takkavalinesarja.jpg" alt="Takkavalinesarja." />
     </a>
     <a href="images/Tukijalat.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="images/Tukijalat.jpg" alt="Tukijalat" style="max-width: 300px; height: auto;" />
+      <img src="images/Tukijalat.jpg" alt="Tukijalat" />
     </a>
     <a href="images/Koukkuja.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="images/Koukkuja.jpg" alt="koukkuja" style="max-width: 300px; height: auto;" />
+      <img src="images/Koukkuja.jpg" alt="Koukkuja" />
     </a>
-        <a href="images/Sydämmiä2.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="images/Sydämmiä2.jpg" alt="Sydämiä" style="max-width: 300px; height: auto;" />
+    <a href="images/Sydämmiä2.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/Sydämmiä2.jpg" alt="Sydämiä" />
     </a>
-     <a href="images/Oravansurma2.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="images/Oravansurma2.jpg" alt="puukko" class="wide-image" />
+    <a href="images/Oravansurma2.jpg" target="_blank" rel="noopener noreferrer">
+      <img src="images/Oravansurma2.jpg" alt="Puukko" class="wide-image" />
     </a>
   </div>
 </section>
@@ -86,38 +88,3 @@
 </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
