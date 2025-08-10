@@ -7,22 +7,102 @@
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; background-color: #1b1b1b; color: #f4f4f4;
+    margin: 0; 
+    background-color: #1b1b1b; 
+    color: #f4f4f4;
   }
   header {
-    background: #111; padding: 1rem; text-align: center; border-bottom: 2px solid #aa7b39;
+    background: #111; 
+    padding: 1rem; 
+    border-bottom: 2px solid #aa7b39;
   }
-  header h1 { margin: 0; font-size: 2rem; color: #aa7b39; }
-  nav { margin-top: 0.5rem; text-align: center; }
+  header h1 {
+    margin: 0; 
+    font-size: 2rem; 
+    color: #aa7b39; 
+    text-align: center;
+  }
+  /* Navigaation perus */
+  nav {
+    text-align: center;
+    position: relative;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav li {
+    margin: 0 1rem;
+  }
   nav a {
-    color: #f4f4f4; margin: 0 1rem; text-decoration: none; font-weight: bold;
+    color: #f4f4f4; 
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 1rem;
   }
-  nav a:hover { color: #aa7b39; }
+  nav a:hover {
+    color: #aa7b39;
+  }
+
+  /* Hamppari-valikon nappi (piilotettu desktopilla) */
+  .menu-toggle {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    background: #aa7b39;
+    border-radius: 2px;
+  }
+
+  /* Mobiilivalikko piilotettu oletuksena */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      background: #111;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: none;
+      border-top: 2px solid #aa7b39;
+      z-index: 1000;
+    }
+    nav ul.showing {
+      display: flex;
+    }
+    nav li {
+      margin: 1rem 0;
+    }
+    .menu-toggle {
+      display: flex;
+    }
+  }
+
   section {
-    padding: 2rem; max-width: 800px; margin: auto;
+    padding: 2rem; 
+    max-width: 800px; 
+    margin: auto;
   }
   footer {
-    background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
+    background: #111; 
+    text-align: center; 
+    padding: 1rem; 
+    font-size: 0.9rem; 
+    color: #aaa; 
+    border-top: 2px solid #aa7b39; 
+    margin-top: 2rem;
   }
 </style>
 </head>
@@ -30,26 +110,45 @@
 <header>
   <h1>Joen Seppä</h1>
   <nav>
-    <a href="index.html">Etusivu</a>
-    <a href="tuotteet.html">Tuotteet</a>
-    <a href="yhteydenotto.html">Yhteydenotto</a>
-    <a href="tietoa.html">Tietoa minusta</a>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Avaa valikko" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Etusivu</a></li>
+      <li><a href="tuotteet.html">Tuotteet</a></li>
+      <li><a href="yhteydenotto.html">Yhteydenotto</a></li>
+      <li><a href="tietoa.html">Tietoa minusta</a></li>
+    </ul>
   </nav>
 </header>
 
 <section>
   <h2>Tietoa minusta</h2>
   <p>Olen Joen Seppä – artesaaniopiskelija ja yleisseppä. Olen erikoistunut takomatuotteisiin, nahkatöihin ja metallin käsittelyyn. Pajani on paikka, jossa yhdistän perinteiset tekniikat ja modernin suunnittelun.</p>
-  <p> Minulla on myös kivi- ja puutyön opintoja. Tavoitteenani on kehittää ammattitaitoani sekä myydä tuotteitani laadukkaasti ja vastuullisesti.</p>
+  <p>Minulla on myös kivi- ja puutyön opintoja. Tavoitteenani on kehittää ammattitaitoani sekä myydä tuotteitani laadukkaasti ja vastuullisesti.</p>
 </section>
 
 <footer>
   &copy; 2025 Joen Seppä – Kaikki oikeudet pidätetään
 </footer>
+
+<script>
+  const toggleButton = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggleButton.addEventListener('click', () => {
+    menu.classList.toggle('showing');
+  });
+
+  // Mahdollinen lisä: keyboard accessibility
+  toggleButton.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      menu.classList.toggle('showing');
+    }
+  });
+</script>
 </body>
 </html>
-
-
-
-
-
