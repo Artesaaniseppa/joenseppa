@@ -3,80 +3,80 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tietoa minusta – Sepänpaja Joen Seppä</title>
+<title>Tietoa minusta – Sepän paja Joen Seppä</title>
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0; background-color: #1b1b1b; color: #f4f4f4;
   }
   header {
-    background: #111; padding: 1rem; text-align: center; border-bottom: 2px solid #aa7b39;
-  }
-  header h1 { margin: 0; font-size: 2rem; color: #aa7b39; }
-  nav {
-    margin-top: 0.5rem; 
+    background: #111;
+    padding: 1rem;
     text-align: center;
+    border-bottom: 2px solid #aa7b39;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #aa7b39;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* sallii rivittymisen */
+    padding: 0.5rem 0;
   }
   nav a {
-    color: #f4f4f4; margin: 0 1rem; text-decoration: none; font-weight: bold;
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
   }
   nav a:hover {
     color: #aa7b39;
   }
-  /* Responsiivinen valikko */
+  /* Mobiilissa valikko rivittyy allekkain */
   @media (max-width: 768px) {
     nav {
-      position: relative;
-    }
-    .menu-toggle {
-      display: inline-block;
-      cursor: pointer;
-      color: #aa7b39;
-      font-size: 1.5rem;
-      user-select: none;
-      margin-top: 0.5rem;
-    }
-    nav ul {
-      display: none;
       flex-direction: column;
-      background: #111;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      border-top: 2px solid #aa7b39;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      z-index: 1000;
+      align-items: center;
     }
-    nav ul.showing {
-      display: flex;
+    nav a {
+      padding: 0.75rem 0;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid #aa7b39;
     }
-    nav ul li {
-      margin: 1rem 0;
+    nav a:first-child {
+      border-top: none;
     }
   }
   section {
-    padding: 2rem; max-width: 800px; margin: auto;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
   }
   footer {
-    background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
+    background: #111;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+    border-top: 2px solid #aa7b39;
+    margin-top: 2rem;
   }
 </style>
 </head>
 <body>
-
 <header>
   <h1>Joen Seppä</h1>
   <nav>
-    <span class="menu-toggle" id="menu-toggle">&#9776;</span>
-    <ul id="menu">
-      <li><a href="index.html">Etusivu</a></li>
-      <li><a href="tuotteet.html">Tuotteet</a></li>
-      <li><a href="yhteydenotto.html">Yhteydenotto</a></li>
-      <li><a href="tietoa.html">Tietoa minusta</a></li>
-    </ul>
+    <a href="index.html">Etusivu</a>
+    <a href="tuotteet.html">Tuotteet</a>
+    <a href="yhteydenotto.html">Yhteydenotto</a>
+    <a href="tietoa.html">Tietoa minusta</a>
   </nav>
 </header>
 
@@ -89,15 +89,5 @@
 <footer>
   &copy; 2025 Joen Seppä – Kaikki oikeudet pidätetään
 </footer>
-
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('showing');
-  });
-</script>
-
 </body>
 </html>
