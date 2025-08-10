@@ -25,13 +25,10 @@
   nav { 
     margin-top: 0.5rem; 
     text-align: center; 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 0.5rem;
   }
   nav a {
     color: #f4f4f4; 
+    margin: 0 1rem; 
     text-decoration: none; 
     font-weight: bold;
   }
@@ -43,50 +40,42 @@
     max-width: 960px; 
     margin: auto;
   }
-
-  /* --- Galleria desktop / tablet --- */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-    max-width: 960px;
-    margin: auto;
   }
-  .gallery a { display: block; }
-
   .gallery img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    height: auto;
     border: 2px solid #aa7b39;
     border-radius: 4px;
     display: block;
   }
-
-  .gallery img.wide-image {
-    grid-column: span 2;
-    height: 360px;
-    object-fit: cover;
+  /* Viides kuva desktopilla */
+  @media (min-width: 701px) {
+    .gallery img.wide-image {
+      width: 632px;
+      height: auto;
+      grid-column: span 2;
+      justify-self: center;
+    }
   }
-
-  /* --- MOBIILI --- */
+  /* Mobiili */
   @media (max-width: 700px) {
+    nav a {
+      display: block;
+      margin: 0.5rem 0;
+    }
     .gallery {
       grid-template-columns: 1fr;
     }
-    .gallery img {
-      height: auto;
-      max-height: 60vh;
-      object-fit: contain;
-    }
     .gallery img.wide-image {
       grid-column: span 1;
+      width: 100%;
       height: auto;
-      max-height: 65vh;
-      object-fit: contain;
     }
   }
-
   footer {
     background: #111; 
     text-align: center; 
