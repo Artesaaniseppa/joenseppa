@@ -20,9 +20,17 @@
   nav a:hover { color: #aa7b39; }
   .hero {
     background: url('images/ahjo.jpg') center/cover no-repeat;
-    height: 50vh; display: flex; justify-content: center; align-items: center; text-shadow: 2px 2px 5px black;
+    height: 50vh; display: flex; justify-content: center; align-items: center; 
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
   }
-  .hero h2 { font-size: 3rem; color: #fff; }
+  .hero h2 { 
+    font-size: 3rem; 
+    color: #aa7b39; 
+  }
   footer {
     background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
   }
@@ -39,20 +47,6 @@
   </nav>
 </header>
 
-
-<style>
-  h2 {
-    color: #aa7b39;
-    text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;
-  }
-</style>
-</head>
-<body>
-
 <div class="hero">
   <h2>Tervetuloa pajalleni</h2>
 </div>
@@ -62,10 +56,3 @@
 </footer>
 </body>
 </html>
-
-
-
-
-
-
-
