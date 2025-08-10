@@ -29,6 +29,12 @@
   height: auto;
   border: 2px solid #aa7b39;
 }
+
+.gallery img.wide-image {
+  max-width: 600px; 
+  height: auto;
+  grid-column: span 2;
+}
   footer {
     background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
   }
@@ -58,7 +64,7 @@
       <img src="images/Koukkuja.jpg" alt="koukkuja" style="max-width: 300px; height: auto;" />
     </a>
      <a href="images/Oravansurma.JPG" target="_blank" rel="noopener noreferrer">
-      <img src="images/Oravansurma.JPG" alt="puukko" style="max-width: 300px; height: auto;" />
+      <img src="images/Oravansurma.JPG" alt="puukko" class="wide-image" />
     </a>
     <a href="images/Sydämmiä.jpeg" target="_blank" rel="noopener noreferrer">
       <img src="images/Sydämmiä.jpeg" alt="Sydämiä" style="max-width: 300px; height: auto;" />
@@ -71,6 +77,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
