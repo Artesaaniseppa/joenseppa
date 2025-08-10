@@ -7,49 +7,94 @@
 <style>
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; background-color: #1b1b1b; color: #f4f4f4;
+    margin: 0; 
+    background-color: #1b1b1b; 
+    color: #f4f4f4;
   }
   header {
-    background: #111; padding: 1rem; text-align: center; border-bottom: 2px solid #aa7b39;
+    background: #111; 
+    padding: 1rem; 
+    text-align: center; 
+    border-bottom: 2px solid #aa7b39;
   }
-  header h1 { margin: 0; font-size: 2rem; color: #aa7b39; }
-  nav { margin-top: 0.5rem; text-align: center; }
+  header h1 { 
+    margin: 0; 
+    font-size: 2rem; 
+    color: #aa7b39; 
+  }
+  nav { 
+    margin-top: 0.5rem; 
+    text-align: center; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 0.5rem;
+  }
   nav a {
-    color: #f4f4f4; margin: 0 1rem; text-decoration: none; font-weight: bold;
+    color: #f4f4f4; 
+    text-decoration: none; 
+    font-weight: bold;
   }
-  nav a:hover { color: #aa7b39; }
+  nav a:hover { 
+    color: #aa7b39; 
+  }
   section {
-    padding: 2rem; max-width: 960px; margin: auto;
+    padding: 2rem; 
+    max-width: 960px; 
+    margin: auto;
   }
+
+  /* --- Galleria desktop / tablet --- */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    max-width: 960px;
+    margin: auto;
   }
+  .gallery a { display: block; }
+
   .gallery img {
     width: 100%;
-    height: auto;
+    height: 220px;
+    object-fit: cover;
     border: 2px solid #aa7b39;
+    border-radius: 4px;
     display: block;
   }
-  /* Poistetaan kiinteät pikselimitat */
-  .gallery img.short-image {
-    max-width: 100%;
-    height: auto;
-  }
+
   .gallery img.wide-image {
-    max-width: 100%;
-    height: auto;
     grid-column: span 2;
+    height: 360px;
+    object-fit: cover;
   }
-  /* Mobiilissa wide-image vie vain yhden sarakkeen */
-  @media (max-width: 600px) {
+
+  /* --- MOBIILI --- */
+  @media (max-width: 700px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+    .gallery img {
+      height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+    }
     .gallery img.wide-image {
       grid-column: span 1;
+      height: auto;
+      max-height: 65vh;
+      object-fit: contain;
     }
   }
+
   footer {
-    background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
+    background: #111; 
+    text-align: center; 
+    padding: 1rem; 
+    font-size: 0.9rem; 
+    color: #aaa; 
+    border-top: 2px solid #aa7b39; 
+    margin-top: 2rem;
   }
 </style>
 </head>
@@ -77,7 +122,7 @@
       <img src="images/Koukkuja.jpg" alt="Koukkuja" />
     </a>
     <a href="images/Sydämmiä2.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="images/Sydämmiä2.jpg" alt="Sydämiä" class="short-image" />
+      <img src="images/Sydämmiä2.jpg" alt="Sydämiä" />
     </a>
     <a href="images/Oravansurma2.jpg" target="_blank" rel="noopener noreferrer">
       <img src="images/Oravansurma2.jpg" alt="Puukko" class="wide-image" />
@@ -90,4 +135,3 @@
 </footer>
 </body>
 </html>
-
