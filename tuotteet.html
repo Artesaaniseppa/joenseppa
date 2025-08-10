@@ -21,26 +21,20 @@
   section {
     padding: 2rem; max-width: 1000px; margin: auto;
   }
-  .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
-  gap: 1rem;
-}
-
-.gallery img:not(.wide-image) {
-  max-width: 300px;
-  width: 100%;
+.gallery img {
+  width: 100%; /* Kuva venyy täyttämään grid-sarakkeen leveyden */
+  max-width: 300px; /* Voit poistaa tämän tai käyttää vain normaalikuville */
   height: auto;
   border: 2px solid #aa7b39;
 }
 
+/* Ylimääräisen leveän kuvan tyyli */
 .gallery img.wide-image {
   grid-column: span 2;
-  width: 100%;
-  max-width: 616px;
+  max-width: 100%; /* Täytä kaksi saraketta kokonaan */
   height: auto;
-  border: 2px solid #aa7b39;
 }
+
 
   footer {
     background: #111; text-align: center; padding: 1rem; font-size: 0.9rem; color: #aaa; border-top: 2px solid #aa7b39; margin-top: 2rem;
@@ -84,6 +78,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
